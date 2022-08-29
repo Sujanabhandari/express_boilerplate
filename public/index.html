@@ -1,13 +1,25 @@
 <html>
 
 <head>
-  <title>Express</title>
+  <title>File Upload Exercise</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body>
-  <h1>Express</h1>
-  <p>Welcome to Express</p>
+  <h1>File upload with Multer</h1>
+  <p>Handle file upload in NodeJS</p>
+  <p>
+    <a href="https://www.npmjs.com/package/multer" target="_blank" >Multer Documentation</a>
+  </p>
+  <form method="POST" action="/upload-profile-pic" enctype="multipart/form-data">
+    <div>
+        <label>Select your profile picture:</label>
+        <input type="file" name="profile_pic" />
+    </div>
+    <div>
+        <input type="submit" value="Upload" />
+    </div>
+</form>
 </body>
 
 </html>
