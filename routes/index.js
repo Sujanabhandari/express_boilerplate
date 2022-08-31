@@ -26,6 +26,6 @@ router
 
 router
   .route('/upload-cat-pics')
-  .post(upload.array("cat_pics", 3), upload_cat_pics)
+  .post(upload.array("cat_pics", 7), upload_cat_pics)
 
 module.exports = router;
