@@ -13,7 +13,7 @@ const db = require("../database/client.js");
         promises.push(query_file);
       });
 
-      // await Promise.all(promises);
+      await Promise.all(promises);
       return res.status(201).send(`<h2>Here is the picture:</h2>
       ${results.map(result => `<img width = "200px"src="/data/uploads/${result.filename}" alt=”something”/><br />`)}`);
 
