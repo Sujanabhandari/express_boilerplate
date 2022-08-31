@@ -54,10 +54,26 @@ const db = require("../database/client.js");
       next(err);
     }
   };
+
+  const get_all_pics_dabase= async (req, res, next) => {
+    console.log("hellop")
+    try {
+      const { rows } = await db.query("SELECT * from pictures ORDER BY id DESC;");
+      console.log(rows);
+      return res.status(201).send(`<h2>Here is the picture:</h2>
+      
+      ${rows.map(result =>  `<img width = "200px"src="/data/uploads/${result.path}" alt=”something”/><br />`)}`);
+    } catch (err) {
+      console.log(err);
+      next(err);
+    }
+  };
+  
   
 
   module.exports = {
     upload_profile_pics,
+    get_all_pics_dabase,
     upload_cat_pics,
     get_all_pics
   };

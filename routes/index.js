@@ -6,7 +6,7 @@ var router = express.Router();
 const upload = require("../middlewares/image_storage");
 
 const {
-  upload_profile_pics, upload_cat_pics, get_all_pics
+  upload_profile_pics, upload_cat_pics, get_all_pics, get_all_pics_dabase
 } = require("../controllers/users");
 /* GET home page. */
 
@@ -23,6 +23,10 @@ router
 router
 .route('/pictures')
 .get(get_all_pics)
+
+router
+.route('/get-pics')
+.get(get_all_pics_dabase)
 
 router
   .route('/upload-cat-pics')
